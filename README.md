@@ -1,4 +1,4 @@
-CfA NIR2: Type Ia Supernova Light Curves
+CfAIR2: Type Ia Supernova Light Curves
 ========================================
 
-Preliminary data compilation from Friedman+15
+NIR data compilation from Friedman+15, with optical data from CfA1-4
