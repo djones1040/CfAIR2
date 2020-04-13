@@ -8,7 +8,7 @@ LAMBDA_RANGE: 2100 25000
 OUTFILE:      kcor_PS1_LOWZ_COMBINED_CfANIR.fits
 
 # Start filters for VERSION = PS1s_CFA3_4SHOOTER2_DS17
-MAGSYSTEM:   BD17
+MAGSYSTEM:   BD17->AB
 FILTSYSTEM:  COUNT
 FILTPATH:   PS1/Pantheon/CFA3_native
 FILTER:  CFA3S-U/a            SNLS3_4shooter2_U.dat  9.6930 
@@ -18,7 +18,7 @@ FILTER:  CFA3S-R/d            SNLS3_4shooter2_R.dat  9.15500-0.021
 FILTER:  CFA3S-I/e            SNLS3_4shooter2_I.dat  8.85100-0.0136 
 
 # Start filters for VERSION = PS1s_CFA3_KEPLERCAM_DS17
-MAGSYSTEM:   BD17
+MAGSYSTEM:   BD17->AB
 FILTSYSTEM:  COUNT
 FILTPATH:    PS1/Pantheon/PS1_CFA4
 FILTER:  CFA41-U/f            cfa4_U_p1.dat  9.724 
@@ -28,11 +28,11 @@ FILTER:  CFA41-r/i            cfa4_r_p1.dat  9.35252+0.0025
 FILTER:  CFA41-i/j            cfa4_i_p1.dat  9.25465-0.004 
 
 # Start filters for VERSION = PS1s_CFA4_p1_DS17
-FILTER:  CFA41-U/k            cfa4_U_p1.dat  9.724 
-FILTER:  CFA41-B/l            cfa4_B_p1.dat  9.88605-0.024 
-FILTER:  CFA41-V/m            cfa4_V_p1.dat  9.47432-0.0012 
-FILTER:  CFA41-r/n            cfa4_r_p1.dat  9.35252+0.0025 
-FILTER:  CFA41-i/o            cfa4_i_p1.dat  9.25465-0.004 
+FILTER:  CFA41-U/k            cfa4_U_p1.dat  9.724
+FILTER:  CFA41-B/l            cfa4_B_p1.dat  9.88605-0.024
+FILTER:  CFA41-V/m            cfa4_V_p1.dat  9.47432-0.0012
+FILTER:  CFA41-r/n            cfa4_r_p1.dat  9.35252+0.0025
+FILTER:  CFA41-i/o            cfa4_i_p1.dat  9.25465-0.004
 
 # Start filters for VERSION = PS1s_CFA4_p2_DS17
 FILTER:  CFA42-B/p            cfa4_B_p2.dat  9.86124+0.0027108700 
@@ -41,7 +41,7 @@ FILTER:  CFA42-r/r            cfa4_r_p2.dat  9.35730+0.0058652098
 FILTER:  CFA42-i/s            cfa4_i_p2.dat  9.25521-0.0042374653 
 
 # Start filters for VERSION = PS1s_CFA1_JRK07_DS16
-MAGSYSTEM:   BD17
+MAGSYSTEM:   BD17->AB
 FILTSYSTEM:  COUNT
 FILTPATH:    PS1/Pantheon/SNLS3-Landolt
 FILTER:  Bessell-U/B          sux-shifted.dat_5A  9.72400 
@@ -60,21 +60,21 @@ FILTER:  Bessell-I/K          si-shifted.dat_5A  8.84600
 # using offsets from Friedman et al. (2015), Equation 2
 # to put PAIRITEL on the CSP system
 # needs to be checked!
-MAGSYSTEM: VEGA
+MAGSYSTEM: VEGA->AB
 FILTSYSTEM: COUNT
 FILTPATH: 2MASS_filters
-FILTER: J2m/L  J_2mass.dat                  0.018  # J2m
-FILTER: H2m/M  H_2mass.dat                  0.038  # H2m
-FILTER: Ks2m/N  Ks_2mass.dat                0.077  # Ks2m
+FILTER: J2m/L  J_2mass.dat                  -0.018  # J2m
+FILTER: H2m/M  H_2mass.dat                  -0.038  # H2m
+FILTER: Ks2m/N  Ks_2mass.dat                -0.077  # Ks2m
 
 MAGSYSTEM:  AB
 FILTSYSTEM: COUNT
 FILTPATH:  $SNDATA_ROOT/filters/CSP/CSP_TAMU_20180316
 FILTER: CSP-u  u_texas_WLcorr.txt          0.058
 FILTER: CSP-B  B_texas_WLcorr.txt          0.125
-FILTER: CSP-o  V_LC3009_texas_WLcorr.txt   0.019
-FILTER: CSP-m  V_LC3014_texas_WLcorr.txt   0.016
-FILTER: CSP-n  V_LC9844_texas_WLcorr.txt   0.020
+#FILTER: CSP-o  V_LC3009_texas_WLcorr.txt   0.019
+#FILTER: CSP-m  V_LC3014_texas_WLcorr.txt   0.016
+#FILTER: CSP-n  V_LC9844_texas_WLcorr.txt   0.020
 FILTER: CSP-g  g_texas_WLcorr.txt          0.017
 FILTER: CSP-r  r_texas_WLcorr.txt          0.006
 FILTER: CSP-i  i_texas_WLcorr.txt         -0.001
@@ -83,293 +83,129 @@ FILTER: CSP-Y  Y_texas_SWO.dat                -0.629
 FILTER: CSP-J  Jrc1_SWO_TAM_scan_atm.dat      -0.912
 FILTER: CSP-H  H_texas_SWO.dat                -1.343
 
-KCOR:  CSP-u  a   K_ua
-KCOR:  CSP-B  a   K_Ba
-KCOR:  CSP-g  a   K_ga
-KCOR:  CSP-r  a   K_ra
-KCOR:  CSP-i  a   K_ia
-KCOR:  CSP-Y  a   K_Ya
-KCOR:  CSP-J  a   K_Ja
-KCOR:  CSP-H  a   K_Ha
+KCOR:  CSP-u  CFA3S-U/a   K_ua
+KCOR:  CSP-B  CFA3S-U/a   K_Ba
 
-KCOR:  CSP-u  b   K_ub
-KCOR:  CSP-B  b   K_Bb
-KCOR:  CSP-g  b   K_gb
-KCOR:  CSP-r  b   K_rb
-KCOR:  CSP-i  b   K_ib
-KCOR:  CSP-Y  b   K_Yb
-KCOR:  CSP-J  b   K_Jb
-KCOR:  CSP-H  b   K_Hb
+KCOR:  CSP-u  CFA3S-B/b   K_ub
+KCOR:  CSP-B  CFA3S-B/b   K_Bb
+KCOR:  CSP-g  CFA3S-B/b   K_gb
 
-KCOR:  CSP-u  c   K_uc
-KCOR:  CSP-B  c   K_Bc
-KCOR:  CSP-g  c   K_gc
-KCOR:  CSP-r  c   K_rc
-KCOR:  CSP-i  c   K_ic
-KCOR:  CSP-Y  c   K_Yc
-KCOR:  CSP-J  c   K_Jc
-KCOR:  CSP-H  c   K_Hc
+KCOR:  CSP-B  CFA3S-V/c   K_Bc
+KCOR:  CSP-g  CFA3S-V/c   K_gc
+KCOR:  CSP-r  CFA3S-V/c   K_rc
 
-KCOR:  CSP-u  d   K_ud
-KCOR:  CSP-B  d   K_Bd
-KCOR:  CSP-g  d   K_gd
-KCOR:  CSP-r  d   K_rd
-KCOR:  CSP-i  d   K_id
-KCOR:  CSP-Y  d   K_Yd
-KCOR:  CSP-J  d   K_Jd
-KCOR:  CSP-H  d   K_Hd
+KCOR:  CSP-g  CFA3S-R/d   K_gd
+KCOR:  CSP-r  CFA3S-R/d   K_rd
+KCOR:  CSP-i  CFA3S-R/d   K_id
 
-KCOR:  CSP-u  e   K_ue
-KCOR:  CSP-B  e   K_Be
-KCOR:  CSP-g  e   K_ge
-KCOR:  CSP-r  e   K_re
-KCOR:  CSP-i  e   K_ie
-KCOR:  CSP-Y  e   K_Ye
-KCOR:  CSP-J  e   K_Je
-KCOR:  CSP-H  e   K_He
+KCOR:  CSP-g  CFA3S-I/e   K_ge
+KCOR:  CSP-r  CFA3S-I/e   K_re
+KCOR:  CSP-i  CFA3S-I/e   K_ie
 
-KCOR:  CSP-u  f   K_uf
-KCOR:  CSP-B  f   K_Bf
-KCOR:  CSP-g  f   K_gf
-KCOR:  CSP-r  f   K_rf
-KCOR:  CSP-i  f   K_if
-KCOR:  CSP-Y  f   K_Yf
-KCOR:  CSP-J  f   K_Jf
-KCOR:  CSP-H  f   K_Hf
+KCOR:  CSP-u  CFA41-U/f   K_uf
+KCOR:  CSP-B  CFA41-U/f   K_Bf
 
-KCOR:  CSP-u  g   K_ug
-KCOR:  CSP-B  g   K_Bg
-KCOR:  CSP-g  g   K_gg
-KCOR:  CSP-r  g   K_rg
-KCOR:  CSP-i  g   K_ig
-KCOR:  CSP-Y  g   K_Yg
-KCOR:  CSP-J  g   K_Jg
-KCOR:  CSP-H  g   K_Hg
+KCOR:  CSP-u  CFA41-B/g   K_ug
+KCOR:  CSP-B  CFA41-B/g   K_Bg
+KCOR:  CSP-g  CFA41-B/g   K_gg
 
-KCOR:  CSP-u  h   K_uh
-KCOR:  CSP-B  h   K_Bh
-KCOR:  CSP-g  h   K_gh
-KCOR:  CSP-r  h   K_rh
-KCOR:  CSP-i  h   K_ih
-KCOR:  CSP-Y  h   K_Yh
-KCOR:  CSP-J  h   K_Jh
-KCOR:  CSP-H  h   K_Hh
+KCOR:  CSP-B  CFA41-V/h   K_Bh
+KCOR:  CSP-g  CFA41-V/h   K_gh
+KCOR:  CSP-r  CFA41-V/h   K_rh
 
-KCOR:  CSP-u  i   K_ui
-KCOR:  CSP-B  i   K_Bi
-KCOR:  CSP-g  i   K_gi
-KCOR:  CSP-r  i   K_ri
-KCOR:  CSP-i  i   K_ii
-KCOR:  CSP-Y  i   K_Yi
-KCOR:  CSP-J  i   K_Ji
-KCOR:  CSP-H  i   K_Hi
+KCOR:  CSP-g  CFA41-r/i   K_gi
+KCOR:  CSP-r  CFA41-r/i   K_ri
+KCOR:  CSP-i  CFA41-r/i   K_ii
 
-KCOR:  CSP-u  j   K_uj
-KCOR:  CSP-B  j   K_Bj
-KCOR:  CSP-g  j   K_gj
-KCOR:  CSP-r  j   K_rj
-KCOR:  CSP-i  j   K_ij
-KCOR:  CSP-Y  j   K_Yj
-KCOR:  CSP-J  j   K_Jj
-KCOR:  CSP-H  j   K_Hj
+KCOR:  CSP-r  CFA41-i/j   K_rj
+KCOR:  CSP-i  CFA41-i/j   K_ij
 
-KCOR:  CSP-u  k   K_uk
-KCOR:  CSP-B  k   K_Bk
-KCOR:  CSP-g  k   K_gk
-KCOR:  CSP-r  k   K_rk
-KCOR:  CSP-i  k   K_ik
-KCOR:  CSP-Y  k   K_Yk
-KCOR:  CSP-J  k   K_Jk
-KCOR:  CSP-H  k   K_Hk
+KCOR:  CSP-u  CFA41-U/k   K_uk
+KCOR:  CSP-B  CFA41-U/k   K_Bk
 
-KCOR:  CSP-u  l   K_ul
-KCOR:  CSP-B  l   K_Bl
-KCOR:  CSP-g  l   K_gl
-KCOR:  CSP-r  l   K_rl
-KCOR:  CSP-i  l   K_il
-KCOR:  CSP-Y  l   K_Yl
-KCOR:  CSP-J  l   K_Jl
-KCOR:  CSP-H  l   K_Hl
+KCOR:  CSP-u  CFA41-B/l   K_ul
+KCOR:  CSP-B  CFA41-B/l   K_Bl
+KCOR:  CSP-g  CFA41-B/l   K_gl
 
-KCOR:  CSP-u  m   K_um
-KCOR:  CSP-B  m   K_Bm
-KCOR:  CSP-g  m   K_gm
-KCOR:  CSP-r  m   K_rm
-KCOR:  CSP-i  m   K_im
-KCOR:  CSP-Y  m   K_Ym
-KCOR:  CSP-J  m   K_Jm
-KCOR:  CSP-H  m   K_Hm
+KCOR:  CSP-B  CFA41-V/m   K_Bm
+KCOR:  CSP-g  CFA41-V/m   K_gm
+KCOR:  CSP-r  CFA41-V/m   K_rm
 
-KCOR:  CSP-u  n   K_un
-KCOR:  CSP-B  n   K_Bn
-KCOR:  CSP-g  n   K_gn
-KCOR:  CSP-r  n   K_rn
-KCOR:  CSP-i  n   K_in
-KCOR:  CSP-Y  n   K_Yn
-KCOR:  CSP-J  n   K_Jn
-KCOR:  CSP-H  n   K_Hn
+KCOR:  CSP-g  CFA41-r/n   K_gn
+KCOR:  CSP-r  CFA41-r/n   K_rn
+KCOR:  CSP-i  CFA41-r/n   K_in
 
-KCOR:  CSP-u  o   K_uo
-KCOR:  CSP-B  o   K_Bo
-KCOR:  CSP-g  o   K_go
-KCOR:  CSP-r  o   K_ro
-KCOR:  CSP-i  o   K_io
-KCOR:  CSP-Y  o   K_Yo
-KCOR:  CSP-J  o   K_Jo
-KCOR:  CSP-H  o   K_Ho
+KCOR:  CSP-r  CFA41-i/o   K_ro
+KCOR:  CSP-i  CFA41-i/o   K_io
+KCOR:  CSP-Y  CFA41-i/o   K_Yo
 
-KCOR:  CSP-u  p   K_up
-KCOR:  CSP-B  p   K_Bp
-KCOR:  CSP-g  p   K_gp
-KCOR:  CSP-r  p   K_rp
-KCOR:  CSP-i  p   K_ip
-KCOR:  CSP-Y  p   K_Yp
-KCOR:  CSP-J  p   K_Jp
-KCOR:  CSP-H  p   K_Hp
+KCOR:  CSP-u  CFA42-B/p   K_up
+KCOR:  CSP-B  CFA42-B/p   K_Bp
+KCOR:  CSP-g  CFA42-B/p   K_gp
 
-KCOR:  CSP-u  q   K_uq
-KCOR:  CSP-B  q   K_Bq
-KCOR:  CSP-g  q   K_gq
-KCOR:  CSP-r  q   K_rq
-KCOR:  CSP-i  q   K_iq
-KCOR:  CSP-Y  q   K_Yq
-KCOR:  CSP-J  q   K_Jq
-KCOR:  CSP-H  q   K_Hq
+KCOR:  CSP-B  CFA42-V/q   K_Bq
+KCOR:  CSP-g  CFA42-V/q   K_gq
+KCOR:  CSP-r  CFA42-V/q   K_rq
 
-KCOR:  CSP-u  r   K_ur
-KCOR:  CSP-B  r   K_Br
-KCOR:  CSP-g  r   K_gr
-KCOR:  CSP-r  r   K_rr
-KCOR:  CSP-i  r   K_ir
-KCOR:  CSP-Y  r   K_Yr
-KCOR:  CSP-J  r   K_Jr
-KCOR:  CSP-H  r   K_Hr
+KCOR:  CSP-g  CFA42-r/r   K_gr
+KCOR:  CSP-r  CFA42-r/r   K_rr
+KCOR:  CSP-i  CFA42-r/r   K_ir
 
-KCOR:  CSP-u  s   K_us
-KCOR:  CSP-B  s   K_Bs
-KCOR:  CSP-g  s   K_gs
-KCOR:  CSP-r  s   K_rs
-KCOR:  CSP-i  s   K_is
-KCOR:  CSP-Y  s   K_Ys
-KCOR:  CSP-J  s   K_Js
-KCOR:  CSP-H  s   K_Hs
+KCOR:  CSP-r  CFA42-i/s   K_rs
+KCOR:  CSP-i  CFA42-i/s   K_is
+KCOR:  CSP-Y  CFA42-i/s   K_Ys
 
-KCOR:  CSP-u  B   K_uB
-KCOR:  CSP-B  B   K_BB
-KCOR:  CSP-g  B   K_gB
-KCOR:  CSP-r  B   K_rB
-KCOR:  CSP-i  B   K_iB
-KCOR:  CSP-Y  B   K_YB
-KCOR:  CSP-J  B   K_JB
-KCOR:  CSP-H  B   K_HB
+KCOR:  CSP-u  Bessell-U/B   K_uB
+KCOR:  CSP-B  Bessell-U/B   K_BB
+KCOR:  CSP-g  Bessell-U/B   K_gB
 
-KCOR:  CSP-u  C   K_uC
-KCOR:  CSP-B  C   K_BC
-KCOR:  CSP-g  C   K_gC
-KCOR:  CSP-r  C   K_rC
-KCOR:  CSP-i  C   K_iC
-KCOR:  CSP-Y  C   K_YC
-KCOR:  CSP-J  C   K_JC
-KCOR:  CSP-H  C   K_HC
+KCOR:  CSP-u  Bessell-B/C   K_uC
+KCOR:  CSP-B  Bessell-B/C   K_BC
+KCOR:  CSP-g  Bessell-B/C   K_gC
 
-KCOR:  CSP-u  D   K_uD
-KCOR:  CSP-B  D   K_BD
-KCOR:  CSP-g  D   K_gD
-KCOR:  CSP-r  D   K_rD
-KCOR:  CSP-i  D   K_iD
-KCOR:  CSP-Y  D   K_YD
-KCOR:  CSP-J  D   K_JD
-KCOR:  CSP-H  D   K_HD
+KCOR:  CSP-B  Bessell-V/D   K_BD
+KCOR:  CSP-g  Bessell-V/D   K_gD
+KCOR:  CSP-r  Bessell-V/D   K_rD
 
-KCOR:  CSP-u  E   K_uE
-KCOR:  CSP-B  E   K_BE
-KCOR:  CSP-g  E   K_gE
-KCOR:  CSP-r  E   K_rE
-KCOR:  CSP-i  E   K_iE
-KCOR:  CSP-Y  E   K_YE
-KCOR:  CSP-J  E   K_JE
-KCOR:  CSP-H  E   K_HE
+KCOR:  CSP-g  Bessell-R/E   K_gE
+KCOR:  CSP-r  Bessell-R/E   K_rE
+KCOR:  CSP-i  Bessell-R/E   K_iE
 
-KCOR:  CSP-u  F   K_uF
-KCOR:  CSP-B  F   K_BF
-KCOR:  CSP-g  F   K_gF
-KCOR:  CSP-r  F   K_rF
-KCOR:  CSP-i  F   K_iF
-KCOR:  CSP-Y  F   K_YF
-KCOR:  CSP-J  F   K_JF
-KCOR:  CSP-H  F   K_HF
+KCOR:  CSP-r  Bessell-I/F   K_rF
+KCOR:  CSP-i  Bessell-I/F   K_iF
+KCOR:  CSP-Y  Bessell-I/F   K_YF
 
-KCOR:  CSP-u  G   K_uG
-KCOR:  CSP-B  G   K_BG
-KCOR:  CSP-g  G   K_gG
-KCOR:  CSP-r  G   K_rG
-KCOR:  CSP-i  G   K_iG
-KCOR:  CSP-Y  G   K_YG
-KCOR:  CSP-J  G   K_JG
-KCOR:  CSP-H  G   K_HG
+KCOR:  CSP-u  Bessell-U/G   K_uG
+KCOR:  CSP-B  Bessell-U/G   K_BG
+KCOR:  CSP-g  Bessell-U/G   K_gG
 
-KCOR:  CSP-u  H   K_uH
-KCOR:  CSP-B  H   K_BH
-KCOR:  CSP-g  H   K_gH
-KCOR:  CSP-r  H   K_rH
-KCOR:  CSP-i  H   K_iH
-KCOR:  CSP-Y  H   K_YH
-KCOR:  CSP-J  H   K_JH
-KCOR:  CSP-H  H   K_HH
+KCOR:  CSP-u  Bessell-B/H   K_uH
+KCOR:  CSP-B  Bessell-B/H   K_BH
+KCOR:  CSP-g  Bessell-B/H   K_gH
 
-KCOR:  CSP-u  I   K_uI
-KCOR:  CSP-B  I   K_BI
-KCOR:  CSP-g  I   K_gI
-KCOR:  CSP-r  I   K_rI
-KCOR:  CSP-i  I   K_iI
-KCOR:  CSP-Y  I   K_YI
-KCOR:  CSP-J  I   K_JI
-KCOR:  CSP-H  I   K_HI
+KCOR:  CSP-B  Bessell-V/I   K_BI
+KCOR:  CSP-g  Bessell-V/I   K_gI
+KCOR:  CSP-r  Bessell-V/I   K_rI
 
-KCOR:  CSP-u  J   K_uJ
-KCOR:  CSP-B  J   K_BJ
-KCOR:  CSP-g  J   K_gJ
-KCOR:  CSP-r  J   K_rJ
-KCOR:  CSP-i  J   K_iJ
-KCOR:  CSP-Y  J   K_YJ
-KCOR:  CSP-J  J   K_JJ
-KCOR:  CSP-H  J   K_HJ
+KCOR:  CSP-g  Bessell-R/J   K_gJ
+KCOR:  CSP-r  Bessell-R/J   K_rJ
+KCOR:  CSP-i  Bessell-R/J   K_iJ
 
-KCOR:  CSP-u  K   K_uK
-KCOR:  CSP-B  K   K_BK
-KCOR:  CSP-g  K   K_gK
-KCOR:  CSP-r  K   K_rK
-KCOR:  CSP-i  K   K_iK
-KCOR:  CSP-Y  K   K_YK
-KCOR:  CSP-J  K   K_JK
-KCOR:  CSP-H  K   K_HK
+KCOR:  CSP-r  Bessell-I/K   K_rK
+KCOR:  CSP-i  Bessell-I/K   K_iK
+KCOR:  CSP-Y  Bessell-I/K   K_YK
 
-KCOR:  CSP-u  L   K_uL
-KCOR:  CSP-B  L   K_BL
-KCOR:  CSP-g  L   K_gL
-KCOR:  CSP-r  L   K_rL
-KCOR:  CSP-i  L   K_iL
-KCOR:  CSP-Y  L   K_YL
-KCOR:  CSP-J  L   K_JL
-KCOR:  CSP-H  L   K_HL
+KCOR:  CSP-i  J2m/L   K_iL
+KCOR:  CSP-Y  J2m/L   K_YL
+KCOR:  CSP-J  J2m/L   K_JL
 
-KCOR:  CSP-u  M   K_uM
-KCOR:  CSP-B  M   K_BM
-KCOR:  CSP-g  M   K_gM
-KCOR:  CSP-r  M   K_rM
-KCOR:  CSP-i  M   K_iM
-KCOR:  CSP-Y  M   K_YM
-KCOR:  CSP-J  M   K_JM
-KCOR:  CSP-H  M   K_HM
+KCOR:  CSP-Y  H2m/M   K_YM
+KCOR:  CSP-J  H2m/M   K_JM
+KCOR:  CSP-H  H2m/M   K_HM
 
-KCOR:  CSP-u  N   K_uN
-KCOR:  CSP-B  N   K_BN
-KCOR:  CSP-g  N   K_gN
-KCOR:  CSP-r  N   K_rN
-KCOR:  CSP-i  N   K_iN
-KCOR:  CSP-Y  N   K_YN
-KCOR:  CSP-J  N   K_JN
-KCOR:  CSP-H  N   K_HN
+KCOR:  CSP-Y  Ks2m/N   K_YN
+KCOR:  CSP-J  Ks2m/N   K_JN
+KCOR:  CSP-H  Ks2m/N   K_HN
 
 REDSHIFT_RANGE:   0.0  0.10
 REDSHIFT_BINSIZE: 0.02
@@ -381,4 +217,3 @@ AV_BINSIZE:  1.0
 AV_OPTION:   2   [1 => use AV at avg lambda in filter  (with CCM89)]
                  [2 => convolve spectrum and extinction with CCM89 law]
 
-DUPLICATE_LAMSHIFT_GLOBAL: 10
